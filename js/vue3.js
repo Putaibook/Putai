@@ -2,13 +2,13 @@
 const app = {
   data(){
   return {
-    //顧客資料
+    //訂購人資料
     custom_data : {
-      custom_name : "",
-      custom_mail: "",
-      custom_group: "",
-      custom_phone: "",
-    },
+      name : "",
+      mail: "",
+      phone: "",
+    }, 
+    purchaseType : "",
     //書本資料
     book_data : [
       book_k = book.kbook,
@@ -57,18 +57,14 @@ const app = {
     },
     purchase3_list_add(){
       const exam = this.exam_data;
-      let elem;
-      let check_format = "國小";
-      if(exam.choose_elementary ==="其他"){
-        elem = exam.other_elementary;
-      }else{
-        elem = exam.choose_elementary;
-      }
-      if(elem.indexOf(check_format) == -1){
-        exam.warning_text = `格式錯誤，請輸入正確格式 (例: XX國小)`;
+      
+      // let check_format = "國小";
+      let elem = exam.choose_elementary === "其他" ? exam.other_elementary:exam.choose_elementary;
+      if(elem.indexOf("國小") == -1){
+        exam.warning_text = "格式錯誤，請輸入正確格式 (例: XX國小)";
         return false;
       }else{
-        this.warning_text = "";
+        // this.warning_text = "";
         let result = `${exam.extra_purchase3_grade}年級${elem}月考模擬試題 ${exam.extra_purchase3_num}本`;
         let newobj = {
           result: result,
@@ -123,18 +119,18 @@ const app = {
       const custom = this.custom_data;
       let purchase;
 
-      if(!custom.custom_name){
+      if(!custom.name){
         alert("請輸入您的姓名");
-        $("html,body").animate({scrollTop:($("#custom_name").offset().top)-100},500);
+        $("html,body").animate({scrollTop:($("#name").offset().top)-100},500);
         $(".inputname").focus();
         return false;
-      }else if(!custom.custom_mail){
+      }else if(!custom.mail){
         alert("請輸入你的電子郵件");
         $("html,body").animate({scrollTop:($("#custom_email").offset().top)-100},500);
         $(".inputmail").focus();
         return false;
-      }else if(custom.custom_phone == "" || custom.custom_phone.match(/^0\d{9}/)  == null){
-        $("html,body").animate({scrollTop:($("#custom_phone").offset().top)-100},500);
+      }else if(custom.phone == "" || custom.phone.match(/^0\d{9}/)  == null){
+        $("html,body").animate({scrollTop:($("#phone").offset().top)-100},500);
         $(".inputphone").focus();
         alert("電話未填寫或格式錯誤");
         return false;
@@ -162,12 +158,12 @@ const app = {
           }
         }
       }
-      const url = "https://script.google.com/macros/s/AKfycbwbfpPl8Na8gLIph72CzCjLFqwRyDQ_5bfDDkpmZDTXz3LnKNKvyi8j3xAXmweO9jETqw/exec";
+      const url = "https://script.google.com/macros/s/AKfycbxhewFRO9But-pY2MtKR0TsBfi2j1zbsYUorubQ7IBd/dev";
       const send_data =  {
-      name : custom.custom_name,
-      phone : custom.custom_phone,
+      name : custom.name,
+      phone : custom.phone,
       group : custom.custom_group,
-      email : custom.custom_mail,
+      email : custom.mail,
       purchase : purchase,
       statics: JSON.stringify(this.send),
       lengths: this.send.length
