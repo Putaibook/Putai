@@ -89,7 +89,7 @@ const app = {
       else if (num < 1)
         return (this.exam_data.warningText = "請填寫需要的數量");
 
-      const obj = { grade, school, num ,publisher:"宏碁",name:`${grade}年級 ${school}模擬月考試題`};
+      const obj = { grade, school, num:+num ,publisher:"宏碁",name:`${grade}年級 ${school}模擬月考試題`};
 
       this.exam_data.confirmList.push(obj);
     },
@@ -130,6 +130,7 @@ const app = {
     },
     //送表單
     conFirm(){
+  
       const c = this.custom_data;
       //customInfo
       if(!c.name)return this.isFocus("name");
@@ -144,17 +145,18 @@ const app = {
       }  
       // purchaseType !== `senior` ? 
       if(!this.isConfirm){
-        document.querySelector("#confirmOrder").focus();
         this.isConfirm = true
-        console.log(this.isConfirm);
         alert("請再一次確認訂購的項目是否有誤，沒有的話請再次點擊送出表單");
       }else{
         this.submitData(arr);
+        setTimeout(function(){
+          $(".formBtn input").prop('disabled', true);
+        },500)
       }
     },
     submitData(arr){
       console.log(arr);
-      const url = "https://script.google.com/macros/s/AKfycbxhewFRO9But-pY2MtKR0TsBfi2j1zbsYUorubQ7IBd/dev";
+      const url = "https://script.google.com/macros/s/AKfycby6tsnp87cdudK_cETsMjNwOMx5sS5n5RD05aLpSlL6ZM7Ljp8RbRywHwd0J2lf8Aae6w/exec";
       const data = {
         name : this.custom_data.name,
         email : this.custom_data.mail,

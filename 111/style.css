@@ -95,6 +95,11 @@ main {
   padding-bottom: 18px;
 }
 
+.alerttxt {
+  color: hsl(0deg, 80%, 50%);
+  font-weight: 600;
+}
+
 .description table {
   margin: 5px 0 20px;
   border-collapse: collapse;
@@ -428,7 +433,8 @@ fieldset .custom_info_content {
 .formBtn input {
   padding: 10px 30px;
   font-size: 2rem;
-  background-color: #fcfc03;
+  background-color: #37bb65;
+  color: #222;
 }
 .formBtn input:hover {
   color: red;
@@ -452,7 +458,7 @@ fieldset .custom_info_content {
     font-size: 0.8rem;
   }
   .confirmOrder .ConfirmCustomInfo_ul li {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 @media (max-width: 568px) {

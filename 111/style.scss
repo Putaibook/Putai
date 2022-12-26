@@ -74,7 +74,7 @@ main {
   justify-content: center;
   align-items: center;
   border: 3px dotted red;
-  background-color: hsl(70 80 70);
+  background-color: hsl(70 80% 70%);
   .description_h2{
     padding: .5rem 0 ;
     border-bottom: 2px solid #777;
@@ -92,6 +92,10 @@ main {
       padding-bottom: 18px;
     }
   }
+}
+.alerttxt{
+  color:hsl(0, 80%, 50%);
+  font-weight: 600;
 }
 .description table{
   margin: 5px 0 20px;
@@ -242,7 +246,7 @@ label input{
     display: block;
     margin: 5px;
     min-width: 90px;
-    color: hsl(230 90 30);
+    color: hsl(230 90% 30%);
     &:hover{
       transform: scale(1.15);
     }
@@ -292,7 +296,9 @@ label input{
 }
 .accordion-button:not(.collapsed){
   color: red;
+
 }
+
 
 .td-bookname{
   text-indent: 5px;
@@ -426,7 +432,8 @@ label input{
   input{
     padding: 10px 30px;
     font-size: 2rem;
-    background-color: #fcfc03;
+    background-color: #37bb65;
+    color:#222;
     &:hover{
       color:red;
       font-weight: 600;
@@ -450,7 +457,7 @@ label input{
     font-size: .8rem;
   }
   .confirmOrder .ConfirmCustomInfo_ul li{
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
