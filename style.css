@@ -2,6 +2,7 @@ html body {
   line-height: 1.5;
   font-family: var(--default_font);
   word-wrap: balance;
+  background: var(--container-bg-color);
 }
 :root {
   --default_font:'Noto Sans TC', sans-serif;

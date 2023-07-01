@@ -185,7 +185,7 @@ const app = {
       error: function (err) {
         if(err.status == 200||302){
           alert("表單已成功寄出");
-            document.write("感謝您的訂購");
+            document.write(`<h1 style="min-heigth=100dvh;padding-top:30px;">感謝你的訂購</h1>`);
         }
         console.log(err);
       }
