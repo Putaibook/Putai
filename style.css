@@ -51,8 +51,8 @@ main {
   background: rgba(0, 255, 255, 0.695);
 
   position: fixed;
-  right: 50px;
-  bottom: 30px;
+  right: 1rem;
+  bottom: .5rem;
 }
 
 #description {
@@ -109,7 +109,7 @@ main {
 
 
 fieldset {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,7 +163,11 @@ fieldset .custom_info_content {
     --sectionSmallTitle:1.25rem;
   }
   .customBox {
+    flex-direction: column;
     gap: 5px;
+  }
+  .customBox label{
+    font-size: 2rem;
   }
 }
 .orderTitle {
@@ -408,6 +412,7 @@ fieldset .custom_info_content {
   padding: 10px 30px;
   font-size: 2rem;
   background-color: #fcfc03;
+  color:black;
 }
 .formBtn input:hover {
   color: red;
@@ -479,14 +484,6 @@ fieldset .custom_info_content {
   }
   .td-bookname {
     font-size: 18px;
-  }
-  .confirmOrder_title h2 {
-    max-width: 98%;
-    font-size: 22px;
-    font-weight: 800;
-  }
-  .confirmOrder_title .confirmOrder {
-    margin: 15px auto;
   }
   .confirmOrder .ConfirmCustomInfo_ul {
     padding: 0.5em;
