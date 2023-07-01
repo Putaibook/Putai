@@ -10,7 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>普台書局訂購表單</title>
   </head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Noto+Sans:ital,wght@0,400;0,500;0,700;0,800;1,300&display=swap" rel="stylesheet">
+  
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- vue -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -19,73 +23,69 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"
-  />
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"
-  ></script>
+    crossorigin="anonymous"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <!-- bootstrap icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" crossorigin="anonymous"/>
- 
+  
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script> -->
   <body>
-    <div class="container" id="container">
-      <header id="header">
+    <div class="container p-3" id="container">
+      <header id="header" class="pt-4 text-center">
         <h1 class="title">普台書局訂購表單</h1>
-        <div id="banner">
-          <img src="./logo.jpg" alt="普台書局" />
-        </div>
+        <!-- <div id="banner" class="my-5 banner">
+          <img src="./logo.jpg" alt="普台書局logo" />
+        </div> -->
       </header>
       <main>
         <!-- 注意事項 -->
-        <section id="description" class="description">
-          <h2 class="description_h2">注意事項</h2>
+        <section id="description" class="description p-3 d-flex flex-column justify-content-center align-items-center">
+          <h2 class="description_h2 py-2 text-center w-100">注意事項</h2>
           <table border="1">
             <div>111下學期特價時間表如下</div>
             <tr>
-              <td class="TableDate">11/11</td>
+              <td class="TableDate text-center px-2">7/1</td>
               <td class="tableContent">開始登記</td>
             </tr>
             <tr>
-              <td class="TableDate">12/30</td>
+              <td class="TableDate text-center px-2">8/1</td>
               <td class="tableContent">登記結束</td>
             </tr>
             <tr>
-              <td class="TableDate">1/1</td>
-              <td class="tableContent">開始依號領書</td>
+              <td class="TableDate text-center px-2">9/1前</td>
+              <td class="tableContent">完成取書</td>
             </tr>
             <tr>
-              <td colspan="2" class="tableContent td-last"><i class="bi bi-exclamation-circle-fill"></i>未能等待者，請直接門市選購(會員價)</td>
+              <td colspan="2" class="tableContent td-last fs-6"><i class="bi bi-exclamation-circle-fill"></i>未能等待者，請直接門市選購(會員價)</td>
             </tr>
           </table>
-            <ul class="description_ul">
-              <li class="desicription_li">
+            <ul>
+              <li>
                 <p>本訂單送出前請再次確認欲訂購之項目</p>
               </li>
-              <li class="desicription_li">
+              <li>
                 本表單所選購的項目享有的折扣如下:
                 <p>
-                  &nbsp;一南一出版社國中自修及考卷 一<span class="mark redcolor">77折</span><br>
-                  (講義及評量維持<span class="mark redcolor">72</span>折)
+                  &nbsp;一南一出版社國中自修及考卷 一<span class="mark">77折</span><br>
+                  (講義及評量維持<span class="mark">72</span>折)
                 </p>
                 <p>
                   &nbsp;一康軒、國小南一、翰林出版之自修評量講義及考卷(不含作業簿、隨堂練習...等)
-                  一 <span class="mark redcolor">72折</span>
+                  一 <span class="mark">72折</span>
                 </p>
                 <p>
                   &nbsp;一非康軒，南一，翰林出版社之自修評量講義及考卷 一
-                  <span class="mark redcolor">68折</span>
+                  <span class="mark">68折</span>
                 </p>
               </li>
-              <li class="desicription_li">
+              <li>
                 表單登記者須<span class="mark">配合時間叫號取書</span>(須等新書到齊再一次取走)
               </li>
-              <li class="desicription_li">
+              <li>
                 急於用書者"請勿登記"，直接來門市購買—折扣以會員價計算
               </li>
-              <li class="desicription_li">送出後請耐心等待本書局將書備齊，之後會依<span class="mark">表單編號分批叫號取書</li>
-              <li class="desicription_li">登記後未取者，本店會將其列入<span class="mark">黑名單，將來不再享有本店會員價之折扣</span>。</li>
+              <li>送出後請耐心等待本書局將書備齊，之後會依<span class="mark">表單編號分批叫號取書</li>
+              <li>登記後未取者，本店會將其列入<span class="mark">黑名單，將來不再享有本店會員價之折扣</span>。</li>
             </ul>
 
         </section>
@@ -100,9 +100,9 @@
         <form action="." id="form" method="post">
           <!-- 個人資訊 -->
           <section class="custom_info">
-            <fieldset>
-            <legend>個人訂購資訊</legend>
-            <div class="custom_info_content">
+            <fieldset class="mt-3">
+            <legend class="text-center p-3">個人訂購資訊</legend>
+            <div class="custom_info_content mx-auto">
               <div class="customBox">
                 <label for="custom_name">姓名 </label>
                 <input  type="text" name="name" placeholder="請輸入姓名" id="custom_name" v-model="custom_data.name" @change="warningText.name=false">
@@ -120,20 +120,22 @@
               </div>
               <p v-show="warningText.phone"class="warningText">{{"請填寫電話!!!"}}</p>
             </div>
-            <h3 class="typeh3">訂購項目</h3>
+            <h3 class="type3">訂購項目</h3>
             <div class="purchaseType">
-              <label for="seniorOnly"><input type="radio" v-model="purchaseType" value="senior" id="seniorOnly">僅國中</label>
-              <label for="elemOnly"><input type="radio" v-model="purchaseType" value="elem" id="elemOnly" >僅國小</label>
-              <label for="both"><input type="radio" v-model="purchaseType" value="both" id="both">都有</label>
+              <label for="seniorOnly"><input type="radio" v-model="purchaseType" value="senior" id="seniorOnly">僅訂購國中參考書
+                <br> <span v-show="purchaseType === 'senior'" class="p-3" style="color:rgba(249, 17, 17, 0.695)">填寫此項目者可直接送出</span> </label>
+               
+              <label for="elemOnly"><input type="radio" v-model="purchaseType" value="elem" id="elemOnly" >僅訂購國小參考書</label>
+              <label for="both"><input type="radio" v-model="purchaseType" value="both" id="both">兩者皆有</label>
             </div>
-            </fieldset>
             
+            </fieldset>
           </section>
           
           <!-- 訂單填寫 -->
-          <section class="order" v-show="purchaseType !== 'senior' ">
+          <section class="order" v-show="(purchaseType === 'elem'||purchaseType === 'both' )">
             <h2 class="orderTitle">訂購列表</h2>
-            <div class="filter_title">篩選器</div>
+            <p class="filter_title">篩選器</p>
             <div class="filterbox">
               <!-- 版本 -->
               <div class="filter_group">
@@ -299,41 +301,61 @@
               </div>
           </section>
           <!-- 確認訂單 -->
-          <div class="confirmOrder_title">
-            <h2>以下是您所選購的項目，請確認</h2>
+          
+          <div class="formBtn">
+            <input type="submit" value="提交表單" @click.prevent="conFirm()">
           </div>
-          <section id="confirmOrder" class="confirmOrder">
-            
-            
-            <div class="ConfirmCustomInfo">
-              <h3 class="confirmOrderTitle">訂購個人資料</h3>
-              <ul class="ConfirmCustomInfo_ul">
-                <li class="comfirmData confirmOrder_name">訂貨人姓名 : &nbsp;&nbsp;{{custom_data.name}}</li>
-                <li class="comfirmData confirmOrder_email">訂貨人信箱 : &nbsp;&nbsp;{{custom_data.mail}}</li>
-                <li class="comfirmData confirmOrder_phone">訂貨人電話 : &nbsp;&nbsp;{{custom_data.phone}}</li>
-              </ul>
-              
-            </div>
-              <div class="purchaseInfo">
-              <h3 class="confirmOrderTitle">訂購項目</h3>
-                <ul v-for="books in totalBooks">
-                  <template v-if="isSelect(books)">
-                  <li>{{`${books.name} * ${books.num} 本`}}</li>
-                  </template>
-                </ul>
-                <ul>
-                  <template v-for="obj in exam_data.confirmList">
-                    <li>{{ `${obj.grade}年級${obj.school}月考模擬試題 * ${obj.num}本` }}</li>
-                  </template>
-                </ul>
-                <div v-if="isSenior" class="SeniorOnly">{{purchaseType_Text}}</div>
-              </div>
-          </section>
-          <div class="formBtn"><input type="submit" value="提交表單" @click.prevent="conFirm()"></div>
         </form>
       </main>
-      <div class="gotop"><a href="#form">Top!</a></div>
+      <div class="goTop"><a href="#form">Top!</a></div>
       
+      <!-- modal -->
+      <div class="modal fade bd-example-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="orderModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content p-3">
+            <section id="confirmOrder" class="confirmOrder">
+            
+                <h3 class="text-center my-3">以下是您所選購的項目，請確認</h3>
+              
+              <div class="ConfirmCustomInfo">
+                <h4 class="confirmOrderTitle mb-2">訂購個人資料</h4>
+                <ul class="ConfirmCustomInfo_ul">
+                  <li class="comfirmData confirmOrder_name">訂貨人姓名 : &nbsp;&nbsp;{{custom_data.name}}</li>
+                  <li class="comfirmData confirmOrder_email">訂貨人信箱 : &nbsp;&nbsp;{{custom_data.mail}}</li>
+                  <li class="comfirmData confirmOrder_phone">訂貨人電話 : &nbsp;&nbsp;{{custom_data.phone}}</li>
+                </ul>
+                
+              </div>
+                <div class="purchaseInfo">
+                <h4 class="confirmOrderTitle">訂購項目</h4>
+                <p v-if="isSenior" class="fs-4 fw-600">{{purchaseType_Text}}</p>
+                  <ul>
+                    <template v-for="books in totalBooks">
+                    <li v-if="isSelect(books)">{{`${books.name} * ${books.num} 本`}}</li>
+                    </template>
+                  </ul>
+                  <ul>
+                    <template v-for="obj in exam_data.confirmList">
+                      <li>{{ `${obj.grade}年級${obj.school}月考模擬試題 * ${obj.num}本` }}</li>
+                    </template>
+                  </ul>
+                  
+                </div>
+            </section>
+            <div class="btn_wrap">
+              <div class="comfirm">
+                <label for="confirm_checkbox" class="confirm_checkbox ms-4"><input type="checkbox" name="confirm_checkbox" id="confirm_checkbox" v-model="isConfirm">我已確認我選購的項目無誤</label>
+              </div>
+              <div class="orderBtn my-3">
+                <button type="button" @click="closeModal()" class="btn btn-secondary">取消</button>
+                <button type="button" class="btn btn-primary" :disabled="!isConfirm" @click="conFirm()">送出</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
 

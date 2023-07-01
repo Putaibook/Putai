@@ -1,9 +1,12 @@
+let modal;
+
+
 const app = {
   data() {
     return {
       //訂貨人資料
       custom_data: {
-        phone: "",
+        name: "",
         phone: "",
         mail: "",
       },
@@ -36,7 +39,7 @@ const app = {
         mail: false,
         phone: false
       },
-      isConfirm : false
+      isConfirm : false,
     };
   },
   methods: {
@@ -128,6 +131,13 @@ const app = {
       // else arr.push(book)
       // console.log(arr)
     },
+    openModal(){
+      modal.show();
+    },
+    closeModal(){
+      modal.hide();
+      this.isConfirm = false;
+    },
     //送表單
     conFirm(){
   
@@ -144,26 +154,23 @@ const app = {
         return
       }  
       // purchaseType !== `senior` ? 
-      if(!this.isConfirm){
-        this.isConfirm = true
-        alert("請再一次確認訂購的項目是否有誤，沒有的話請再次點擊送出表單");
-      }else{
-        this.submitData(arr);
-        setTimeout(function(){
-          $(".formBtn input").prop('disabled', true);
-        },500)
-      }
-    },
-    submitData(arr){
-      console.log(arr);
-      const url = "https://script.google.com/macros/s/AKfycby6tsnp87cdudK_cETsMjNwOMx5sS5n5RD05aLpSlL6ZM7Ljp8RbRywHwd0J2lf8Aae6w/exec";
-      const data = {
-        name : this.custom_data.name,
+      // if(!this.isConfirm){
+      //   this.isConfirm = true
+      //   alert("請再一次確認訂購的項目是否有誤，沒有的話請再次點擊送出表單");
+      // }else{
+
+      this.isConfirm ?  this.submitData(arr):this.openModal();
+      },
+      submitData(orders){
+        this.closeModal();
+
+        const url = "https://script.google.com/macros/s/AKfycbyBYKQYx5MpPqhkz0nvhMg9nl05vEvJvxPEpDuVSP-DxPNHN1pipse1i6QJZhFcOWFttg/exec";
+        const data = {
+          name : this.custom_data.name,
         email : this.custom_data.mail,
         phone : this.custom_data.phone,
-        statics : JSON.stringify(arr)
+        statics : JSON.stringify(orders)
       }
-  //     console.log(data.statics);
 
     $.ajax({
       type: "get",
@@ -189,6 +196,7 @@ const app = {
       document.querySelector(`#custom_${v}`).focus();
     },
   },
+
   computed: {
     isOther() {
       const exam = this.exam_data;
@@ -201,10 +209,17 @@ const app = {
       }
     },
     isSenior(){
-      this.purchaseType_Text = this.purchaseType === "senior" ? "僅訂購國中項目一批!" : "含訂購國中項目一批!";
-      return this.purchaseType !== "elem"
+      this.purchaseType_Text = this.purchaseType !== "senior" ? "含訂購國中項目一批!" : "僅訂購國中項目一批!" ;
+      if(!this.purchaseType || this.purchaseType === 'elem') this.purchaseType_Text = "";
+      return this.purchaseType_Text;
     }
   },
+  mounted(){
+    modal = new bootstrap.Modal(document.getElementById('orderModal'), {
+      keyboard: false,
+      backdrop: false
+    })
+  }
 };
 
 Vue.createApp(app).mount("#container");

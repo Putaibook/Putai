@@ -1,4 +1,10 @@
+html body {
+  line-height: 1.5;
+  font-family: var(--default_font);
+  word-wrap: balance;
+}
 :root {
+  --default_font:'Noto Sans TC', sans-serif;
   --sectionTitle: 4rem;
   --sectionSmallTitle: 2rem;
   --container-bg-color: #fffacd;
@@ -12,30 +18,15 @@
   box-sizing: border-box;
 }
 
-html body {
-  font-size: 18px;
-}
 
 .container {
+  margin: 0 auto;
   background: var(--container-bg-color);
-  width: 70vw;
-  padding: 0.5em;
-}
-
-#header {
-  padding-top: 2em;
-  text-align: center;
 }
 #header .title {
   font-size: var(--sectionTitle);
 }
-#header #banner {
-  margin: 48px;
-}
-#header #banner img {
-  max-width: 60vw;
-  max-height: 480px;
-}
+
 
 @media (max-width: 768px) {
   :root {
@@ -50,54 +41,24 @@ main {
   position: relative;
 }
 
-.gotop {
-  border-radius: 50%;
+.goTop {
   width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
   line-height: 50px;
   text-align: center;
-  aspect-ratio: 1/1;
-  background: cyan;
+
+  background: rgba(0, 255, 255, 0.695);
+
   position: fixed;
-  right: 2%;
-  bottom: 3%;
-}
-
-.redcolor {
-  color: red;
-}
-
-.order {
-  padding: 100px 0 50px;
+  right: 50px;
+  bottom: 30px;
 }
 
 #description {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 3px dotted red;
+  outline: 5px dotted red;
+  outline-offset: -5px;
   background-color: hsl(70deg, 80%, 70%);
-}
-#description .description_h2 {
-  padding: 0.5rem 0;
-  border-bottom: 2px solid #777;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-#description ul .mark {
-  font-weight: 600;
-  background: inherit;
-  font-size: 1.3rem;
-}
-#description ul li:not(last-child) {
-  padding-bottom: 18px;
-}
-
-.alerttxt {
-  color: hsl(0deg, 80%, 50%);
-  font-weight: 600;
 }
 
 .description table {
@@ -107,31 +68,45 @@ main {
 }
 .description table td {
   border: 1px solid #000;
-}
-.description table .TableDate {
-  text-align: center;
-  padding: 0 5px;
+  vertical-align:middle;
 }
 .description table .tableContent {
-  text-indent: 3%;
+  text-indent: 5%;
   min-width: 240px;
 }
-
 @media (max-width: 424px) {
   table .tableContent {
     min-width: 160px;
   }
 }
 .td-last {
-  font-size: 1rem;
   border: none;
-  color: red;
-  opacity: 0.9;
-  font-weight: 800;
+  color: rgb(254, 55, 55);
+  font-weight: bold;
 }
 .td-last i {
   padding-right: 3px;
 }
+
+#description .description_h2 {
+  font-size: calc(var(--sectionTitle) - 1rem);
+  border-bottom: 2px solid #777;
+}
+#description ul li:not(last-child) {
+  padding-bottom: 18px;
+}
+#description ul .mark {
+  font-weight: 600;
+  background: inherit;
+  font-size: 1.3rem;
+  color:rgb(252, 28, 28);
+}
+
+
+.order {
+  padding: 100px 0 50px;
+}
+
 
 fieldset {
   height: 100vh;
@@ -141,7 +116,6 @@ fieldset {
   flex-direction: column;
 }
 fieldset legend {
-  text-align: center;
   padding: 1em;
   font-size: var(--sectionTitle);
 }
@@ -152,15 +126,16 @@ fieldset .custom_info_content {
   gap: 2em;
 }
 
-.typeh3 {
+.type3 {
   padding: 20px 0 5px;
 }
 
 .purchaseType {
   max-width: 400px;
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-items: center;
+  align-items: start;
 }
 .purchaseType label {
   display: block;
@@ -184,14 +159,15 @@ fieldset .custom_info_content {
 
 @media (max-width: 424px) {
   :root {
-    --sectionTitle:2.5rem;
-    --sectionSmallTitle:1.5rem;
+    --sectionTitle:2.25rem;
+    --sectionSmallTitle:1.25rem;
   }
   .customBox {
     gap: 5px;
   }
 }
 .orderTitle {
+  padding: .5rem 0;
   text-align: center;
   font-size: 2.5rem;
   border-bottom: 1px solid #000;
@@ -206,18 +182,16 @@ fieldset .custom_info_content {
 
 .filterbox {
   margin: 0 auto 12px;
-  padding: 2.5% 5%;
+  padding: 1rem .5rem;
   max-width: 760px;
   border: 2px solid hsl(120deg, 80%, 50%);
   width: 90%;
 }
 
 .filter_group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
   align-items: center;
-  margin-bottom: 8px;
+  margin-block: 1rem;
 }
 .filter_group .isCheck {
   color: red;
@@ -227,13 +201,13 @@ fieldset .custom_info_content {
 .filter_group label input {
   height: 20px;
   aspect-ratio: 1/1;
+  vertical-align: top;
 }
-
-.filter_option {
-  width: 70%;
+.filter_option{
+  padding: .25rem 0;
 }
 .filter_option label:not(last-child) {
-  margin-right: 10px;
+  margin-right: 1rem;
 }
 .filter_option input {
   cursor: pointer;
@@ -245,12 +219,12 @@ fieldset .custom_info_content {
 }
 
 .filter_btn {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  place-content: center;
+  padding: 1rem 0;
 }
 .filter_btn input {
   display: block;
-  margin: 5px;
   min-width: 90px;
   color: hsl(230deg, 90%, 30%);
 }
@@ -265,7 +239,9 @@ fieldset .custom_info_content {
   display: inline-block;
   text-align: center;
 }
-
+.accordion-header > button{
+  background: #fcfcfc;
+}
 .accordion-body {
   background: #fffacd;
 }
@@ -276,10 +252,10 @@ fieldset .custom_info_content {
   display: grid;
   grid-template-columns: 3fr 80px;
 }
-.accordion-body table tr th {
+.accordion-body th {
   text-align: center;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border: 1px solid #000;
 }
 .accordion-body table td {
@@ -381,29 +357,27 @@ fieldset .custom_info_content {
   border: none;
   background: none;
 }
-
 .confirmOrder_title {
   text-align: center;
 }
-.confirmOrder_title h2 {
+.confirmOrder_title h3 {
   font-size: var(--sectionSmallTitle);
   border-bottom: 1px solid #000;
+  padding-bottom: 5px;
   max-width: 75%;
   margin: 0 auto;
 }
 
 .confirmOrder {
-  margin: 30px auto;
+  margin: 1rem auto;
   border: 2px solid #777;
   width: 100%;
-  min-height: 100vh;
   padding: 1em;
 }
 .confirmOrder .confirmOrderTitle {
   font-weight: 600;
-  text-indent: 2%;
   border-bottom: 2px dotted #000;
-  width: 100%;
+  padding: .5rem 0;
 }
 .confirmOrder .ConfirmCustomInfo_ul {
   margin: 0 auto;
@@ -414,10 +388,10 @@ fieldset .custom_info_content {
 }
 .confirmOrder .ConfirmCustomInfo_ul li {
   list-style-type: decimal;
+  list-style-position: inside;
   font-size: 28px;
-  width: 100%;
   padding: 10px 0;
-  margin: 0 auto;
+
   text-align: left;
 }
 
@@ -433,13 +407,12 @@ fieldset .custom_info_content {
 .formBtn input {
   padding: 10px 30px;
   font-size: 2rem;
-  background-color: #37bb65;
-  color: #222;
+  background-color: #fcfc03;
 }
 .formBtn input:hover {
   color: red;
   font-weight: 600;
-  background: #66ba84;
+  background: #3bee7a;
   transition: opacity 0.5s ease-out;
   opacity: 0.6;
 }
@@ -448,17 +421,47 @@ fieldset .custom_info_content {
   font-weight: 600;
   color: #fc7100;
 }
+.stepBtn button{
+  font-size: 1.6rem;
+  padding: .25rem 1rem;
+}
+.stepBtn button:hover,.stepBtn button:active{
+  opacity: .88; 
+}
+
+
+/* modal */
+.modal-content{
+  background: #f4f1f1;
+}
+.orderBtn{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
+.orderBtn button{
+  padding: .5rem 2rem;
+}
+.confirm_checkbox input{
+  min-width: 20px;
+  aspect-ratio: 1/1;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
 
 @media (max-width: 768px) {
   .container {
     width: 100vw !important;
     padding: 10px;
   }
-  .td-booknum {
-    font-size: 0.8rem;
+  .accordion-body th{
+    font-size: 1rem;
   }
+
   .confirmOrder .ConfirmCustomInfo_ul li {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media (max-width: 568px) {
