@@ -1,3 +1,4 @@
+import { books , praticebook , workbook , lecture  , Engbook as engbook}  from "./book.js";
 let modal;
 
 
@@ -17,6 +18,7 @@ const app = {
         books: books,
         lecture: lecture,
         workbook: workbook.concat(praticebook),
+        engbook
       },
       filter_data: {
         edition: "",
@@ -28,12 +30,12 @@ const app = {
       exam_data: {
         grade: "",
         school: "",
-        school_list: [...schoolList],
+        school_list: ["海山國小","實踐國小","後埔國小","新埔國小","莒光國小","文德國小","裕德國小"],
         confirmList: [],
         placeholder: "",
         warningText: "",
       },
-      totalBooks : books.concat(workbook,praticebook,lecture),
+      totalBooks : books.concat(workbook,praticebook,lecture,engbook),
       warningText:{
         name: false,
         mail: false,
@@ -63,11 +65,14 @@ const app = {
       return this.filter_data.type ? book.type == this.filter_data.type : true;
     },
     resetFilter() {
-      const el = this.filter_data;
-      el.edition = "";
-      el.grade = "";
-      el.subject = "";
-      el.type = "";
+      for(let i in this.filter_data){
+        this.filter_data[i] = '';
+      }
+      // const el = this.filter_data;
+      // el.edition = "";
+      // el.grade = "";
+      // el.subject = "";
+      // el.type = "";
     },
     //月考試題
     addExam() {
@@ -146,7 +151,7 @@ const app = {
       if(!c.name)return this.isFocus("name");
       else if(!c.mail)return this.isFocus("mail");
       else if(!c.phone)return this.isFocus("phone");
-      //hasPurchase?
+      //hasPurchase?      
       const arr = this.totalBooks.filter(x=>x.num>=1).concat(this.exam_data.confirmList);
       
       if(arr.length < 1 && this.purchaseType !== "senior"){
@@ -164,7 +169,10 @@ const app = {
       submitData(orders){
         this.closeModal();
 
-        const url = "https://script.google.com/macros/s/AKfycbyBYKQYx5MpPqhkz0nvhMg9nl05vEvJvxPEpDuVSP-DxPNHN1pipse1i6QJZhFcOWFttg/exec";
+        // const url = "https://script.google.com/macros/s/AKfycbyBYKQYx5MpPqhkz0nvhMg9nl05vEvJvxPEpDuVSP-DxPNHN1pipse1i6QJZhFcOWFttg/exec";
+
+        const url = "https://script.google.com/macros/s/AKfycbyO5MSecY48TbJEMLB2SYNSy3wZ1u2HjbR9adRgQcNDT0n58Btl8ZpXJPuJkyOj-MAubw/exec";
+
         const data = {
           name : this.custom_data.name,
         email : this.custom_data.mail,
@@ -181,7 +189,8 @@ const app = {
       crossDomain: true,
       // 成功送出 會回頭觸發下面這塊感謝
       success: function(responseText) {
-          console.log('responseURL:')},
+            document.write(`<h1 style="min-heigth=100dvh;padding-top:30px;">感謝你的訂購</h1>`);
+          },
       error: function (err) {
         if(err.status == 200||302){
           alert("表單已成功寄出");

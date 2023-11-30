@@ -42,18 +42,18 @@
         <section id="description" class="description p-3 d-flex flex-column justify-content-center align-items-center">
           <h2 class="description_h2 py-2 text-center w-100">注意事項</h2>
           <table border="1">
-            <div>112上學期特價時間表如下</div>
+            <div>112下學期特價時間表如下</div>
             <tr>
-              <td class="TableDate text-center px-2">7/1</td>
+              <td class="TableDate text-center px-2">11/30</td>
               <td class="tableContent">開始登記</td>
             </tr>
             <tr>
-              <td class="TableDate text-center px-2">8/1</td>
+              <td class="TableDate text-center px-2">12/31</td>
               <td class="tableContent">登記結束</td>
             </tr>
             <tr>
-              <td class="TableDate text-center px-2">9/1前</td>
-              <td class="tableContent">完成取書</td>
+              <td class="TableDate text-center px-2">1/19前</td>
+              <td class="tableContent">完成取書(預計)</td>
             </tr>
             <tr>
               <td colspan="2" class="tableContent td-last fs-6"><i class="bi bi-exclamation-circle-fill"></i>未能等待者，請直接門市選購(會員價)</td>
@@ -105,18 +105,18 @@
             <div class="custom_info_content mx-auto">
               <div class="customBox">
                 <label for="custom_name">姓名 </label>
-                <input  type="text" name="name" placeholder="請輸入姓名" id="custom_name" v-model="custom_data.name" @change="warningText.name=false">
+                <input  type="text" name="name" placeholder="請輸入姓名" id="custom_name" v-model="custom_data.name" @change="warningText.name=false" required>
               </div>
               <p v-show="warningText.name"class="warningText">{{"請填寫姓名!!!"}}</p>
               <div class="customBox">
                 <label for="custom_mail">信箱 </label>
-                <input  type="email" name="email" placeholder="請輸入電子信箱" id="custom_mail" v-model="custom_data.mail" @change="warningText.mail=false">
+                <input  type="email" name="email" placeholder="請輸入電子信箱" id="custom_mail" v-model="custom_data.mail" @change="warningText.mail=false" required>
                 
               </div>
               <p v-show="warningText.mail"class="warningText">{{"請填寫信箱!!!"}}</p>
               <div class="customBox">
                 <label for="custom_phone">電話 </label>
-                <input  type="tel" name="tel" placeholder="請輸入連絡電話" id="custom_phone" v-model="custom_data.phone" @change="warningText.phone=false">
+                <input  type="tel" name="tel" placeholder="請輸入連絡電話" id="custom_phone" v-model="custom_data.phone" @change="warningText.phone=false" required>
               </div>
               <p v-show="warningText.phone"class="warningText">{{"請填寫電話!!!"}}</p>
             </div>
@@ -299,6 +299,31 @@
   
                     </div>
               </div>
+              <!-- 英文專區 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="accordion_header4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    國小英文測驗卷 <span class="ms-2" style="color: hsl(0, 74%, 61%);">New!</span>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="accordion_header4" data-bs-parent="#accordionBox">
+                  <div class="accordion-body">
+                    <p class="my-2 text-danger">目前英文參考書品項較少</p>
+                    <table>
+                      <tr>
+                        <th class="td-bookname">產品項目</th>
+                        <th class="td-booknum">數量</th>
+                      </tr>
+                      <tr v-for="item in book_data.engbook" :key="item.name">
+                        <template v-if="grade(item)">
+                          <td class="td-bookname" :class="{'Itemdisabled' : item.grade===6}" >{{item.grade===6 ? `${item.name}(舊課綱尚未出版)` : item.name}}</td>
+                          <td class="td-booknum"><input type="number"  v-model="item.num" min="0" :disabled="item.grade===6"></td>
+                        </template>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
           </section>
           <!-- 確認訂單 -->
           
@@ -362,7 +387,7 @@
   <!-- css -->
   <link rel="stylesheet" href="./style.css"/>
   <!-- js -->
-  <script src="./book.js"></script>
-  <script src="./all.js"></script>
+  <script src="./book.js" type="module"></script>
+  <script src="./all.js" type="module"></script>
 
 </html>

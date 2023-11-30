@@ -1,5 +1,5 @@
 //自修，評量，門市考卷
-const books = [
+export const books = [
   // 康軒國語自修
   {
     name: "康軒一年級國語學習自修",
@@ -1834,6 +1834,61 @@ const books = [
     num: "",
     subject: "社會",
     publisher: "良品",
+  },
+  // 明霖國語 門市卷
+  {
+    name: "明霖康版國語一年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 1,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
+  },
+  {
+    name: "明霖康版國語二年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 2,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
+  },
+  {
+    name: "明霖康版國語三年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 3,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
+  },
+  {
+    name: "明霖康版國語四年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 4,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
+  },
+  {
+    name: "明霖康版國語五年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 5,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
+  },
+  {
+    name: "明霖康版國語六年級門市卷",
+    edition: "k",
+    type: "門市卷",
+    grade: 6,
+    num: "",
+    subject: "國文",
+    publisher: "明霖",
   },
   // 明霖數學 門市卷
   {
@@ -3954,7 +4009,7 @@ const books = [
   },
   // 翰林社會
   {
-    name: "翰林三年級學習自修",
+    name: "翰林社會三年級學習自修",
     edition: "h",
     publisher: "翰林",
     grade: 3,
@@ -3963,7 +4018,7 @@ const books = [
     subject: "社會",
   },
   {
-    name: "翰林四年級學習自修",
+    name: "翰林社會四年級學習自修",
     edition: "h",
     publisher: "翰林",
     grade: 4,
@@ -3972,7 +4027,7 @@ const books = [
     subject: "社會",
   },
   {
-    name: "翰林五年級學習自修",
+    name: "翰林社會五年級學習自修",
     edition: "h",
     publisher: "翰林",
     grade: 5,
@@ -3981,7 +4036,7 @@ const books = [
     subject: "社會",
   },
   {
-    name: "翰林六年級學習自修",
+    name: "翰林社會六年級學習自修",
     edition: "h",
     publisher: "翰林",
     grade: 6,
@@ -5680,7 +5735,7 @@ const books = [
   },
 ];
 //課堂練習本
-const praticebook = [
+export const praticebook = [
   {
     name: "康軒一年級國語重點複習",
     edition: "k",
@@ -6888,7 +6943,7 @@ const praticebook = [
   },
 ];
 //作業簿
-const workbook = [
+export const workbook = [
   // GRADE 1
   {
     name: "康軒一年級國語作業簿",
@@ -8097,19 +8152,19 @@ const workbook = [
   }
 ];
 //講義
-const lecture = [
+export const lecture = [
   //康軒
+  // {
+  //   name: "康軒五年級國語學習講義",
+  //   edition: "k",
+  //   publisher: "康軒",
+  //   type : "講義",
+  //   num: "",
+  //   subject: "國文",
+  //   grade: 5
+  // },
   {
-    name: "康軒五年級國語學習講義",
-    edition: "k",
-    publisher: "康軒",
-    type : "講義",
-    num: "",
-    subject: "國文",
-    grade: 5
-  },
-  {
-    name: "康軒五年級國語學習講義",
+    name: "康軒六年級國語學習講義",
     edition: "k",
     publisher: "康軒",
     type : "講義",
@@ -8117,15 +8172,15 @@ const lecture = [
     subject: "國文",
     grade: 6
   },
-  {
-    name: "康軒五年級數學學習講義",
-    edition: "k",
-    publisher: "康軒",
-    type : "講義",
-    num: "",
-    subject: "數學",
-    grade: 5
-  },
+  // {
+  //   name: "康軒五年級數學學習講義",
+  //   edition: "k",
+  //   publisher: "康軒",
+  //   type : "講義",
+  //   num: "",
+  //   subject: "數學",
+  //   grade: 5
+  // },
   {
     name: "康軒六年級數學學習講義",
     edition: "k",
@@ -8246,5 +8301,116 @@ const lecture = [
     grade: 6
   },
 ];
+//英文
+export const Engbook = [
+	{
+		"name": "良品何版三年級英語卷",
+		"edition": "何",
+		"publisher": "良品",
+		"grade": 3,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品何版四年級英語卷",
+		"edition": "何",
+		"publisher": "良品",
+		"grade": 4,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品何版五年級英語卷",
+		"edition": "何",
+		"publisher": "良品",
+		"grade": 5,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品何版六年級英語卷",
+		"edition": "何",
+		"publisher": "良品",
+		"grade": 6,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品翰版三年級英語卷",
+		"edition": "h",
+		"publisher": "良品",
+		"grade": 3,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品翰版四年級英語卷",
+		"edition": "h",
+		"publisher": "良品",
+		"grade": 4,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品翰版五年級英語卷",
+		"edition": "h",
+		"publisher": "良品",
+		"grade": 5,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品翰版六年級英語卷",
+		"edition": "h",
+		"publisher": "良品",
+		"grade": 6,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品康版三年級英語卷",
+		"edition": "k",
+		"publisher": "良品",
+		"grade": 3,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品康版四年級英語卷",
+		"edition": "k",
+		"publisher": "良品",
+		"grade": 4,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品康版五年級英語卷",
+		"edition": "k",
+		"publisher": "良品",
+		"grade": 5,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	},
+	{
+		"name": "良品康版六年級英語卷",
+		"edition": "k",
+		"publisher": "良品",
+		"grade": 6,
+		"type": "門市卷",
+		"num": "",
+		"subject": "英文"
+	}
+]
 
-const schoolList = ["海山國小","實踐國小","後埔國小","新埔國小","莒光國小","文德國小","裕德國小"]
+
