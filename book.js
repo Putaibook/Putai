@@ -1,4 +1,28 @@
-//自修，評量，門市考卷
+
+
+  { //要新增項目格式要長這樣 每個屬性後面都要有逗號做結尾(最後一個可以不用)
+		//除了年級其他都要用""包起來
+	  //名稱
+    name: "康軒一年級國語學習自修",
+		//版本 (k =康軒 , n = 南一 , h = 翰林)	
+    edition: "k", 
+		//出版社
+    publisher: "康軒",
+		//年級 (1-6)
+    grade: 1,
+		//品項(自修 講義 評量 門市卷 作業簿)
+    type: "自修",
+		//不要動
+    num: "",
+		//科目 (國文 英文 數學 自然 社會 生活)
+    subject: "國文",
+  },
+//課堂練習從5758行
+//作業簿從6967行開始
+//講義8176
+//英文8328
+
+// 自修 評量 門市卷放這
 export const books = [
   // 康軒國語自修
   {
@@ -5734,7 +5758,7 @@ export const books = [
     publisher: "明霖",
   },
 ];
-//課堂練習本
+//課堂練習本 //課堂練習... 放這裡
 export const praticebook = [
   {
     name: "康軒一年級國語重點複習",
@@ -6942,7 +6966,7 @@ export const praticebook = [
     type : "作業簿",
   },
 ];
-//作業簿
+//作業簿 ..作業簿在這
 export const workbook = [
   // GRADE 1
   {
@@ -8151,7 +8175,7 @@ export const workbook = [
     grade: 6
   }
 ];
-//講義
+//講義 講義在這
 export const lecture = [
   //康軒
   // {
